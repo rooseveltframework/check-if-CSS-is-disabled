@@ -10,7 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "~16.5.0",
-    "husky": "~3.0.5",
+    "husky": "~3.1.0",
     "lint-staged": "~9.4.0",
     "standard": "~14.3.0"
   },
