@@ -13,7 +13,7 @@
   "readmeFilename": "README.md",
   "dependencies": {},
   "devDependencies": {
-    "browserify": "~16.5.2",
+    "browserify": "~17.0.0",
     "husky": "~4.3.0",
     "lint-staged": "~10.4.0",
     "standard": "~14.3.4"
