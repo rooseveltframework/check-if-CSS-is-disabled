@@ -16,7 +16,7 @@
     "browserify": "~16.5.2",
     "husky": "~4.3.0",
     "lint-staged": "~10.4.0",
-    "standard": "~14.3.4"
+    "standard": "~16.0.0"
   },
   "repository": {
     "type": "git",
