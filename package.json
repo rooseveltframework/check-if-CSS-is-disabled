@@ -1,24 +1,49 @@
 {
   "name": "check-if-css-is-disabled",
-  "description": "Frontend JavaScript module that can determine if CSS is disabled in the browser.",
-  "author": "Eric Newport <kethinov@gmail.com>",
-  "version": "1.0.1",
-  "files": [
-    "dist/cssIsDisabled.js",
-    "cssIsDisabled.js"
+  "description": "Frontend JavaScript module that can determine if CSS is disabled or if it failed to load, then take action to stop JS enhancements from applying if the CSS isn't working first.",
+  "author": "Roosevelt Framework Team <rooseveltframework@gmail.com>",
+  "contributors": [
+    {
+      "name": "Contributors",
+      "url": "https://github.com/rooseveltframework/check-if-CSS-is-disabled/graphs/contributors"
+    }
   ],
-  "homepage": "https://github.com/kethinov/check-if-CSS-is-disabled",
+  "version": "2.0.0",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/check-if-css-is-disabled.js.mjs",
+      "require": "./dist/check-if-css-is-disabled.js.cjs"
+    },
+    "./min": {
+      "default": "./dist/check-if-css-is-disabled.js.min.mjs"
+    }
+  },
+  "homepage": "https://github.com/rooseveltframework/check-if-CSS-is-disabled",
   "license": "CC-BY-4.0",
-  "main": "cssIsDisabled.js",
-  "readmeFilename": "README.md",
-  "dependencies": {},
+  "main": "check-if-css-is-disabled.js.js",
   "devDependencies": {
-    "browserify": "~17.0.0",
-    "standard": "~17.1.0"
+    "@playwright/test": "1.50.1",
+    "express": "4.21.2",
+    "standard": "17.1.2",
+    "webpack-cli": "6.0.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "npm run build && playwright test"
+  },
+  "standard": {
+    "ignore": [
+      "dist/"
+    ]
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kethinov/check-if-CSS-is-disabled.git"
+    "url": "git://github.com/rooseveltframework/check-if-CSS-is-disabled.git"
   },
   "keywords": [
     "CSS",
@@ -26,14 +51,5 @@
     "progressive enhancement",
     "PE"
   ],
-  "scripts": {
-    "bundle": "browserify -r ./cssIsDisabled.js -o dist/cssIsDisabled.js",
-    "lint": "standard"
-  },
-  "standard": {
-    "ignore": [
-      "dist/"
-    ]
-  },
   "funding": "https://www.paypal.com/donate/?hosted_button_id=2L2X8GRXZCGJ6"
 }
