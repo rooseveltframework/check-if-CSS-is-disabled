@@ -58,5 +58,5 @@ typings/
 .next
 
 .npm-cache
-
+dist
 test-results
