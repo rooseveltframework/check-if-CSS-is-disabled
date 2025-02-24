@@ -109,6 +109,15 @@ export default [
           }
         })
       ]
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js/,
+          exclude: /node_modules/,
+          use: '@jsdevtools/coverage-istanbul-loader'
+        }
+      ]
     }
   },
 

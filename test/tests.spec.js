@@ -1,7 +1,9 @@
 const { test, expect, firefox } = require('@playwright/test')
 const path = require('path')
+const fs = require('fs')
 const express = require('express')
 let server
+let counter = 0
 
 test.describe('check-if-css-is-disabled', () => {
   test.beforeAll(async () => {
@@ -26,6 +28,16 @@ test.describe('check-if-css-is-disabled', () => {
       // print everything else, including the test page's console logs
       console.log(msg.text())
     })
+  })
+
+  test.afterEach(async ({ page }) => {
+    // extract coverage data
+    const coverage = await page.evaluate(() => window.__coverage__)
+    // write coverage data to a file
+    if (coverage) {
+      counter++
+      fs.writeFileSync(path.join(process.cwd(), '.nyc_output', `coverage-${counter}.json`), JSON.stringify(coverage))
+    }
   })
 
   test('should detect <link> tag does load css', async ({ page, browserName }) => {

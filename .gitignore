@@ -58,5 +58,6 @@ typings/
 .next
 
 .npm-cache
+.nyc_output
 dist
 test-results
