@@ -31,12 +31,14 @@ test.describe('check-if-css-is-disabled', () => {
   })
 
   test.afterEach(async ({ page }) => {
-    // extract coverage data
-    const coverage = await page.evaluate(() => window.__coverage__)
-    // write coverage data to a file
-    if (coverage) {
-      counter++
-      fs.writeFileSync(path.join(process.cwd(), '.nyc_output', `coverage-${counter}.json`), JSON.stringify(coverage))
+    if (process.env.NYC_PROCESS_ID) {
+      // extract coverage data
+      const coverage = await page.evaluate(() => window.__coverage__)
+      // write coverage data to a file
+      if (coverage) {
+        counter++
+        fs.writeFileSync(path.join(process.cwd(), '.nyc_output', `coverage-${counter}.json`), JSON.stringify(coverage))
+      }
     }
   })
 
