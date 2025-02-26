@@ -37,7 +37,7 @@
     "lint": "standard",
     "lint-fix": "standard --fix",
     "test": "npm run build && playwright test",
-    "coverage": "npm run build && nyc playwright test"
+    "coverage": "npm run build -- --env coverage && nyc playwright test"
   },
   "standard": {
     "ignore": [
