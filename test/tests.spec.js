@@ -3,7 +3,6 @@ const path = require('path')
 const fs = require('fs')
 const express = require('express')
 let server
-let counter = 0
 
 test.describe('check-if-css-is-disabled', () => {
   test.beforeAll(async () => {
@@ -35,10 +34,7 @@ test.describe('check-if-css-is-disabled', () => {
       // extract coverage data
       const coverage = await page.evaluate(() => window.__coverage__)
       // write coverage data to a file
-      if (coverage) {
-        counter++
-        fs.writeFileSync(path.join(process.cwd(), '.nyc_output', `coverage-${counter}.json`), JSON.stringify(coverage))
-      }
+      if (coverage) fs.writeFileSync(path.join(process.cwd(), '.nyc_output', `coverage-${test.info().testId}.json`), JSON.stringify(coverage))
     }
   })
 
