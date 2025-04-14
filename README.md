@@ -6,7 +6,7 @@ If your CSS fails to load but your JS does load, that can lead to mangled-lookin
 
 As such, if no CSS or JS loads but you built your site using [semantic HTML](https://en.wikipedia.org/wiki/Semantic_HTML), it should still look reasonably good with the default styles applied and function reasonably well so long as no JS is mucking with the DOM.
 
-This module was built and is maintained by the [Roosevelt web framework](https://rooseveltframework.org) [team](https://rooseveltframework.org/contributors.html), but it can be used independently of Roosevelt as well.
+This module was built and is maintained by the [Roosevelt web framework](https://rooseveltframework.org) [team](https://rooseveltframework.org/contributors), but it can be used independently of Roosevelt as well.
 
 <details open>
   <summary>Documentation</summary>
